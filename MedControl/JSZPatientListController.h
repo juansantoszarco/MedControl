@@ -13,16 +13,23 @@
 
 @protocol JSZPatientListControllerDelegate <NSObject>
 
--(void) patientListTableViewController:(JSZPatientListController*)sender
+-(void) patientListController:(JSZPatientListController*)sender
                      didClickOnPatient:(JSZPatient*)patient;
 
 @end
 
-@interface JSZPatientListController : UITableViewController <JSZPatientListControllerDelegate>
+@interface JSZPatientListController : UITableViewController <UISearchBarDelegate,JSZPatientListControllerDelegate>
 
 @property (strong, nonatomic) JSZPatientListModel *model;
 
 @property (weak,nonatomic) id<JSZPatientListControllerDelegate> delegate;
+
+#pragma mark - Search Bar properties
+//@property (strong, nonatomic) UITableView *myTableView;
+@property (strong, nonatomic) NSMutableArray *dataSource1; //will be storing all the data
+@property (strong, nonatomic) NSMutableArray *tableData;//will be storing data that will be displayed in table
+@property (strong, nonatomic) NSMutableArray *searchedData;//will be storing data matching with the search string
+@property (strong, nonatomic) UISearchBar *sBar;//search bar
 
 
 #pragma mark - Designed Initializers

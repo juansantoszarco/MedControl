@@ -53,7 +53,7 @@
 
 
 
--(NSUInteger )totalSectionsInModel{
+-(NSUInteger )totalSectionsInModel:(NSArray*)patients{
     
     NSUInteger countSections = 0;
     
@@ -61,8 +61,8 @@
     
     NSMutableDictionary *mutLetters = [letters mutableCopy];
     
-    for (JSZPatient* patient in self.patients) {
-        switch ([patient.name characterAtIndex:0]) {
+    for (NSString* patient in patients) {
+        switch ([patient characterAtIndex:0]) {
             case 'a':
             case 'A':{
                 NSInteger inte = [[mutLetters objectForKey:@"A"]integerValue];

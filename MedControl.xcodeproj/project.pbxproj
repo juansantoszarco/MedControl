@@ -17,6 +17,8 @@
 		9761EF901AA46C6900469351 /* JSZPatientListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EF8E1AA46C6900469351 /* JSZPatientListController.m */; };
 		9761EF911AA46C6900469351 /* JSZPatientListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF8F1AA46C6900469351 /* JSZPatientListController.xib */; };
 		9761EF941AA4705900469351 /* Patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF931AA4705900469351 /* Patients.txt */; };
+		9761EF981AA4E1B900469351 /* JSZPatientController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EF961AA4E1B900469351 /* JSZPatientController.m */; };
+		9761EF991AA4E1B900469351 /* JSZPatientController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF971AA4E1B900469351 /* JSZPatientController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		9761EF8E1AA46C6900469351 /* JSZPatientListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZPatientListController.m; sourceTree = "<group>"; };
 		9761EF8F1AA46C6900469351 /* JSZPatientListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSZPatientListController.xib; sourceTree = "<group>"; };
 		9761EF931AA4705900469351 /* Patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Patients.txt; sourceTree = "<group>"; };
+		9761EF951AA4E1B900469351 /* JSZPatientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSZPatientController.h; sourceTree = "<group>"; };
+		9761EF961AA4E1B900469351 /* JSZPatientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZPatientController.m; sourceTree = "<group>"; };
+		9761EF971AA4E1B900469351 /* JSZPatientController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSZPatientController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +149,9 @@
 				9761EF8D1AA46C6900469351 /* JSZPatientListController.h */,
 				9761EF8E1AA46C6900469351 /* JSZPatientListController.m */,
 				9761EF8F1AA46C6900469351 /* JSZPatientListController.xib */,
+				9761EF951AA4E1B900469351 /* JSZPatientController.h */,
+				9761EF961AA4E1B900469351 /* JSZPatientController.m */,
+				9761EF971AA4E1B900469351 /* JSZPatientController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			files = (
 				9761EF911AA46C6900469351 /* JSZPatientListController.xib in Resources */,
 				9761EF701AA4632C00469351 /* LaunchScreen.xib in Resources */,
+				9761EF991AA4E1B900469351 /* JSZPatientController.xib in Resources */,
 				9761EF941AA4705900469351 /* Patients.txt in Resources */,
 				9761EF6D1AA4632C00469351 /* Images.xcassets in Resources */,
 			);
@@ -260,6 +269,7 @@
 				9761EF6B1AA4632C00469351 /* AppDelegate.m in Sources */,
 				9761EF901AA46C6900469351 /* JSZPatientListController.m in Sources */,
 				9761EF8B1AA4648000469351 /* JSZPatientListModel.m in Sources */,
+				9761EF981AA4E1B900469351 /* JSZPatientController.m in Sources */,
 				9761EF881AA4638F00469351 /* JSZPatient.m in Sources */,
 				9761EF681AA4632C00469351 /* main.m in Sources */,
 			);

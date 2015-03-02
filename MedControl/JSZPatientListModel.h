@@ -29,6 +29,6 @@
 - (JSZPatient *)patientAtIndex:(NSUInteger)index;
 
 //Devuelve el número total de secciones en el modelo
--(NSUInteger) totalSectionsInModel;
+-(NSUInteger) totalSectionsInModel:(NSArray*)patients;
 
 @end
