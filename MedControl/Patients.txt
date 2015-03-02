@@ -1,0 +1,55 @@
+[
+{
+"idUser":"123",
+"name":"Antonio Manderas",
+"gender":"male",
+"lastVisit":"23/4/2015",
+"phone":"555123",
+"visits":[{"fecha":"23/4/2015","informe":"Dolencia en mano derecha","diagnostico":"Posible rotura de primera falange","pruebas":["RX-primera falange"],"tratamiento":"Inmovilicación completa de la falange durante 2 semanas"},
+{"fecha":"30/5/2014","informe":"Dolencia estomacal","diagnostico":"Inflamación de apéndice","pruebas":["Ecografia abdominal","Analítica completa"],"tratamiento":"Ingetión de buscapina cada 8 horas y seguimiento"},{"fecha":"3/6/2015","informe":"Extirpación de apéndice","diagnostico":"Apendicitis","pruebas":["Sin prueba"],"tratamiento":"Operación de extirpado de apéndice, Reposo durante 20 días"}]
+},
+{
+"idUser":"456",
+"name":"Alberto Machin",
+"gender":"male",
+"lastVisit":"12/3/2015",
+"phone":"555456",
+"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Machin"],"tratamiento":"rerere tratamiento"},
+{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["documento"],"tratamiento":"rerere tratamiento"}]
+},
+{
+"idUser":"456",
+"name":"Brad Pitt",
+"gender":"male",
+"lastVisit":"12/3/2015",
+"phone":"555456",
+"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Pitt"],"tratamiento":"rerere tratamiento"},
+{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Pitt"],"tratamiento":"rerere tratamiento"}]
+},
+{
+"idUser":"456",
+"name":"Begoña",
+"gender":"male",
+"lastVisit":"12/3/2015",
+"phone":"555456",
+"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["radiografia Begoña","analitica Begoña"],"tratamiento":"rerere tratamiento"},
+{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Begoña"],"tratamiento":"rerere tratamiento"}]
+},
+{
+"idUser":"456",
+"name":"Fernando",
+"gender":"male",
+"lastVisit":"12/3/2015",
+"phone":"555456",
+"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Fernando"],"tratamiento":"rerere tratamiento"}]
+},
+{
+"idUser":"456",
+"name":"Juanito",
+"gender":"male",
+"lastVisit":"12/3/2015",
+"phone":"555456",
+"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Juanito"],"tratamiento":"rerere tratamiento"}]
+}
+
+]

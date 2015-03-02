@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "JSZPatientListModel.h"
+#import "JSZPatientListController.h"
+
 
 @interface AppDelegate ()
 
@@ -17,7 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    
+    
+    //compruebo el tipo de pantalla del dispositivo
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        //tablet
+        
+    }else{
+        [self configureForPhone];
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -44,5 +57,40 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - Utils
+
+-(void)configureForPhone{
+    
+    
+    //creo el modelo de datos leido del json
+    JSZPatientListModel *model = [[JSZPatientListModel alloc]init];
+    
+    //creo el controlador de la tabla
+    
+    JSZPatientListController *patientListController = [[JSZPatientListController alloc]initWithModel:model style:UITableViewStylePlain];
+    
+    //creo el combinador que será un navigation controller
+    
+    UINavigationController *patientsNav = [[UINavigationController alloc] init];
+    
+    //pusheo el delegado
+    
+    [patientsNav pushViewController:patientListController animated:NO];
+    
+    
+    //le asigno delegado a sí mismo
+    
+    patientListController.delegate = patientListController;
+    
+    
+    //le coloco como vista principal
+    
+    self.window.rootViewController = patientsNav;
+    
+}
+
+
 
 @end
