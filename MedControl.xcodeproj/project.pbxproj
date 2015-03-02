@@ -19,6 +19,11 @@
 		9761EF941AA4705900469351 /* Patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF931AA4705900469351 /* Patients.txt */; };
 		9761EF981AA4E1B900469351 /* JSZPatientController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EF961AA4E1B900469351 /* JSZPatientController.m */; };
 		9761EF991AA4E1B900469351 /* JSZPatientController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF971AA4E1B900469351 /* JSZPatientController.xib */; };
+		9761EF9E1AA4E71500469351 /* JSZVisitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EF9C1AA4E71500469351 /* JSZVisitCollectionViewCell.m */; };
+		9761EF9F1AA4E71500469351 /* JSZVisitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9761EF9D1AA4E71500469351 /* JSZVisitCollectionViewCell.xib */; };
+		9761EFA21AA4EECF00469351 /* JSZTableViewCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EFA11AA4EECF00469351 /* JSZTableViewCellController.m */; };
+		9761EFA61AA4EF9500469351 /* JSZProofsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9761EFA41AA4EF9500469351 /* JSZProofsController.m */; };
+		9761EFA71AA4EF9500469351 /* JSZProofsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9761EFA51AA4EF9500469351 /* JSZProofsController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,14 @@
 		9761EF951AA4E1B900469351 /* JSZPatientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSZPatientController.h; sourceTree = "<group>"; };
 		9761EF961AA4E1B900469351 /* JSZPatientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZPatientController.m; sourceTree = "<group>"; };
 		9761EF971AA4E1B900469351 /* JSZPatientController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSZPatientController.xib; sourceTree = "<group>"; };
+		9761EF9B1AA4E71500469351 /* JSZVisitCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSZVisitCollectionViewCell.h; sourceTree = "<group>"; };
+		9761EF9C1AA4E71500469351 /* JSZVisitCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZVisitCollectionViewCell.m; sourceTree = "<group>"; };
+		9761EF9D1AA4E71500469351 /* JSZVisitCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSZVisitCollectionViewCell.xib; sourceTree = "<group>"; };
+		9761EFA01AA4EECF00469351 /* JSZTableViewCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSZTableViewCellController.h; sourceTree = "<group>"; };
+		9761EFA11AA4EECF00469351 /* JSZTableViewCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZTableViewCellController.m; sourceTree = "<group>"; };
+		9761EFA31AA4EF9500469351 /* JSZProofsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSZProofsController.h; sourceTree = "<group>"; };
+		9761EFA41AA4EF9500469351 /* JSZProofsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSZProofsController.m; sourceTree = "<group>"; };
+		9761EFA51AA4EF9500469351 /* JSZProofsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSZProofsController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +107,7 @@
 		9761EF641AA4632C00469351 /* MedControl */ = {
 			isa = PBXGroup;
 			children = (
+				9761EF9A1AA4E6EA00469351 /* Views */,
 				9761EF921AA4705000469351 /* Resources */,
 				9761EF8C1AA46C0500469351 /* Controllers */,
 				9761EF851AA4637000469351 /* Models */,
@@ -152,6 +166,11 @@
 				9761EF951AA4E1B900469351 /* JSZPatientController.h */,
 				9761EF961AA4E1B900469351 /* JSZPatientController.m */,
 				9761EF971AA4E1B900469351 /* JSZPatientController.xib */,
+				9761EFA01AA4EECF00469351 /* JSZTableViewCellController.h */,
+				9761EFA11AA4EECF00469351 /* JSZTableViewCellController.m */,
+				9761EFA31AA4EF9500469351 /* JSZProofsController.h */,
+				9761EFA41AA4EF9500469351 /* JSZProofsController.m */,
+				9761EFA51AA4EF9500469351 /* JSZProofsController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +181,16 @@
 				9761EF931AA4705900469351 /* Patients.txt */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		9761EF9A1AA4E6EA00469351 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9761EF9B1AA4E71500469351 /* JSZVisitCollectionViewCell.h */,
+				9761EF9C1AA4E71500469351 /* JSZVisitCollectionViewCell.m */,
+				9761EF9D1AA4E71500469351 /* JSZVisitCollectionViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +277,9 @@
 				9761EF701AA4632C00469351 /* LaunchScreen.xib in Resources */,
 				9761EF991AA4E1B900469351 /* JSZPatientController.xib in Resources */,
 				9761EF941AA4705900469351 /* Patients.txt in Resources */,
+				9761EF9F1AA4E71500469351 /* JSZVisitCollectionViewCell.xib in Resources */,
 				9761EF6D1AA4632C00469351 /* Images.xcassets in Resources */,
+				9761EFA71AA4EF9500469351 /* JSZProofsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +302,9 @@
 				9761EF8B1AA4648000469351 /* JSZPatientListModel.m in Sources */,
 				9761EF981AA4E1B900469351 /* JSZPatientController.m in Sources */,
 				9761EF881AA4638F00469351 /* JSZPatient.m in Sources */,
+				9761EFA21AA4EECF00469351 /* JSZTableViewCellController.m in Sources */,
+				9761EF9E1AA4E71500469351 /* JSZVisitCollectionViewCell.m in Sources */,
+				9761EFA61AA4EF9500469351 /* JSZProofsController.m in Sources */,
 				9761EF681AA4632C00469351 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

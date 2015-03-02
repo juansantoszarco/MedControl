@@ -73,7 +73,6 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy zzz"];
     NSDate *date = [dateFormat dateFromString:aux];
-   // NSLog(@"Fecha obtenida es:%@",date);
     
     return date;
     
@@ -87,7 +86,6 @@
         [visits addObject:[dict objectForKey:@"informe"]];
     }
     
-    // NSLog(@"Numero de visitas: %d", (int)[visits count]);
     
     return visits;
 }
@@ -98,7 +96,6 @@
     
     [data addObject:[dataFromVisit objectForKey:@"pruebas"]];
     
-    // NSLog(@"Numero de pruebas: %d", (int)[[data objectAtIndex:0] count]);
     
     return [data objectAtIndex:0];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "JSZPatientListController.h"
+#import "JSZPatientController.h"
 #import "JSZPatient.h"
 
 
@@ -29,7 +30,6 @@
                style: (UITableViewStyle) aStyle{
     
     if(self=[super initWithStyle:UITableViewStylePlain]){
-        //_wordsModel = aModel;
         _model = aModel;
         self.title = @"Patient List";
         
@@ -53,7 +53,6 @@
     self.tableView.dataSource = self;
     [self fillPatientsDataSearch:self.model.patients];
     [self.tableData addObjectsFromArray:self.dataSource1];
-   // NSLog(@"%@",self.dataSource1);
     self.flagSearchStatus = 0;
 }
 
@@ -110,7 +109,7 @@
     [self.sBar resignFirstResponder];
     self.sBar.text = @"";
 }
-// called when Search (in our case "Done") button pressed
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
@@ -123,7 +122,6 @@
     if(self.flagSearchStatus == 0){
         NSInteger sections = [self.model totalSectionsInModel:self.tableData];
         self.keys = [[self.model.fillLetters allKeys]sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-        // NSLog(@"Did load keys: %@",self.keys);
         
         return  sections;
     }else{
@@ -159,8 +157,7 @@ titleForHeaderInSection:(NSInteger)section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString* cellId = @"cellId";
-    //NSLog(@"contenido tableData Index: %@",[self.tableData objectAtIndex:indexPath.row]);
-    //NSLog(@"Section: %d",indexPath.section);
+   
     JSZPatient* patient;
     
     if(self.flagSearchStatus == 1){
@@ -180,7 +177,7 @@ titleForHeaderInSection:(NSInteger)section
     
     cell.textLabel.text = patient.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Id number: %@",patient.idUser];
-    //cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
+
     self.contador++;
     
     return cell;
@@ -189,29 +186,27 @@ titleForHeaderInSection:(NSInteger)section
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     JSZPatient *patient;
     if(self.flagSearchStatus == 0){
-        //este el normal
         patient = [self patientForIndexPath:indexPath];
     }else{
         
         patient = [self patientForName:[self.tableData objectAtIndex:indexPath.row ]];
     }
-    //NSLog(@"Pulsado el paciente: %@",patient.name);
-    
-    //Notificar al delegado
-    //Comprobar si entiende el mensaje
+    [self searchBarCancelButtonClicked:self.sBar];
+
     if ([self.delegate respondsToSelector:@selector(patientListController:didClickOnPatient:)]) {
-        //entiende el mensaje y se lo mando
-        NSLog(@"Mando el mensaje");
+
         [self.delegate patientListController:self didClickOnPatient:patient];
     }else{
-        NSLog(@"No entiende el mensaje que me quieres mandar");
+        NSLog(@"Error in selected row");
     }
 }
 
 #pragma mark - JSZPatientListControllerDelegate
 
 -(void)patientListController:(JSZPatientListController *)sender didClickOnPatient:(JSZPatient *)patient{
-    NSLog(@"Pulsado paciente: %@",patient.name);
+    
+    JSZPatientController *patientVC = [[JSZPatientController alloc]initWithModel:patient];
+    [self.navigationController pushViewController:patientVC animated:YES];
     
 }
 
@@ -244,9 +239,7 @@ titleForHeaderInSection:(NSInteger)section
             contador= contador + (int)[[self.model.fillLetters objectForKey:[self.keys objectAtIndex:i]]integerValue];
         }
     }
-    
     contador = contador + (int)indexPath.row;
-    // NSLog(@"Contador: %d Patient selected: %@",contador, [self.model patientAtIndex:contador]);
     return [self.model patientAtIndex:contador];
     
 }
@@ -255,9 +248,7 @@ titleForHeaderInSection:(NSInteger)section
 -(void) fillPatientsDataSearch:(NSArray*) patientsList{
     self.dataSource1 = [[NSMutableArray alloc]init];
     for (JSZPatient *patient in patientsList){
-        //NSLog(@"Nombre:: %@",patient.name);
         [self.dataSource1 addObject:patient.name];
-        
     }
 }
 
