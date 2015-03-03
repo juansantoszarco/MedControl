@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    
+    [self configureStyles];
     
     //compruebo el tipo de pantalla del dispositivo
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -126,5 +126,12 @@
     
 }
 
+
+-(void)configureStyles{
+    
+    [[UITableView appearanceWhenContainedIn:[JSZPatientListController class], nil] setSectionIndexBackgroundColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
+    [[UITableView appearance]setSectionIndexColor:[UIColor yellowColor]];
+}
 
 @end

@@ -10,6 +10,8 @@
 #import "JSZPatientController.h"
 #import "JSZPatient.h"
 
+#define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:0.95]
+
 
 @interface JSZPatientListController ()
 
@@ -31,8 +33,13 @@
     
     if(self=[super initWithStyle:UITableViewStylePlain]){
         _model = aModel;
-        self.title = @"Patient List";
-        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectZero];
+        label.font = [UIFont fontWithName:@"Avenir" size:16.0f];
+        label.textColor = Rgb2UIColor(95, 22, 28);
+        self.navigationItem.titleView = label;
+        label.text = @"Patient List";
+        [label sizeToFit];      
+
     }
     
     return self;
@@ -48,12 +55,14 @@
     self.tableData = [[NSMutableArray alloc]init];
     self.sBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,0,320,40)];
     self.sBar.delegate = self;
+    self.sBar.backgroundColor = [UIColor redColor];
     self.tableView.tableHeaderView = self.sBar;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self fillPatientsDataSearch:self.model.patients];
     [self.tableData addObjectsFromArray:self.dataSource1];
     self.flagSearchStatus = 0;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -172,7 +181,11 @@ titleForHeaderInSection:(NSInteger)section
                                       reuseIdentifier:@"cellId"];
     }
     
+    cell.textLabel.textColor = Rgb2UIColor(95, 22, 28);
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:14.0f];
     cell.textLabel.text = patient.name;
+    cell.detailTextLabel.textColor = Rgb2UIColor(95, 22, 28);
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Avenir" size:11.0f];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Id number: %@",patient.idUser];
 
     self.contador++;

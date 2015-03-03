@@ -9,6 +9,8 @@
 #import "JSZTableViewCellController.h"
 #import "JSZProofsController.h"
 
+#define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:0.95]
+
 @interface JSZTableViewCellController ()
 
 @end
@@ -63,6 +65,9 @@
 
     NSString *dato = [self.model objectAtIndex:indexPath.row];
     
+    
+    cell.textLabel.textColor = Rgb2UIColor(81, 3, 23);
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:14.0f];
     cell.textLabel.text = dato;
     
     return cell;
@@ -73,11 +78,14 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* archivo = [self.model objectAtIndex:indexPath.row];
-    
-    if ([self.delegate respondsToSelector:@selector(proobCellController:didClickOnProof:)]) {
-        [self.delegate proobCellController:self didClickOnProof:archivo];
-    }else{
-        NSLog(@"Error didSelect row");
+    if (![archivo isEqualToString:@"Sin prueba"]) {
+        
+        
+        if ([self.delegate respondsToSelector:@selector(proobCellController:didClickOnProof:)]) {
+            [self.delegate proobCellController:self didClickOnProof:archivo];
+        }else{
+            NSLog(@"Error didSelect row");
+        }
     }
     
 }

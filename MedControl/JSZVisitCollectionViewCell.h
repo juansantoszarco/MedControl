@@ -20,7 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableProofs;
 
-@property (weak, nonatomic) IBOutlet UILabel *treatment;
+@property (weak, nonatomic) IBOutlet UITextView *treatment;
 
 #pragma mark - Utils
 

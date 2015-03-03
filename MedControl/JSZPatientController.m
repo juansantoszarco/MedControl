@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Juan Antonio de los Santos Zarco. All rights reserved.
 //
 
+
 #import "JSZPatientController.h"
 #import "JSZPatient.h"
 #import "JSZVisitCollectionViewCell.h"
 #import "JSZTableViewCellController.h"
 #import "JSZProofsController.h"
+
+#define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:0.95]
 
 @interface JSZPatientController ()
 
@@ -43,13 +46,15 @@
     if(self = [super initWithNibName:nil
                               bundle:nil] ){
         _patient = patient;
-        self.title = patient.name;
+        
+        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self registerRandomCell];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -131,7 +136,12 @@
 
 -(void)syncModel{
     [self.collectionView reloadData];
-    self.title = self.patient.name;
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectZero];
+    label.font = [UIFont fontWithName:@"Avenir" size:16.0f];
+    label.textColor = Rgb2UIColor(95, 22, 28);
+    self.navigationItem.titleView = label;
+    label.text = self.patient.name;
+    [label sizeToFit];
     _userName.text = self.patient.name;
     _userGender.text = self.patient.gender;
     _userId.text = self.patient.idUser;
@@ -194,6 +204,8 @@
     cell.tableProofs.delegate = cell.tableViewCell;
     cell.tableViewCell.delegate=self;
     cell.treatment.text = [[self.patient.visits objectAtIndex:indexPath.section]objectForKey:@"tratamiento"];
+    cell.treatment.textColor = Rgb2UIColor(95, 22, 28);
+    cell.treatment.font = [UIFont fontWithName:@"Avenir" size:14.0f];
     [cell.tableProofs reloadData];
     
     return cell;

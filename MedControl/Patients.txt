@@ -1,58 +1,58 @@
 [
 {
-"idUser":"123",
-"name":"Antonio Banderas",
+"idUser":"AH-324",
+"name":"Anthony HopKings",
 "gender":"male",
 "lastVisit":"23/4/2015",
 "phone":"555123",
-"photo":"banderas.jpg",
-"visits":[{"fecha":"23/4/2015","informe":"Dolencia en mano derecha","diagnostico":"Posible rotura de primera falange","pruebas":["RX-primera falange"],"tratamiento":"Inmovilicación completa de la falange durante 2 semanas"},
-{"fecha":"30/5/2014","informe":"Dolencia estomacal","diagnostico":"Inflamación de apéndice","pruebas":["Ecografia abdominal","Analítica completa","Analítica completa","Analítica completa","Analítica completa"],"tratamiento":"Ingetión de buscapina cada 8 horas y seguimiento"},{"fecha":"3/6/2015","informe":"Extirpación de apéndice","diagnostico":"Apendicitis","pruebas":["Sin prueba"],"tratamiento":"Operación de extirpado de apéndice, Reposo durante 20 días"}]
+"photo":"hopkins.jpg",
+"visits":[{"fecha":"3/6/2015","informe":"Dolor agudo fémur","diagnostico":"Posible rotura fémur","pruebas":["RX-femur"],"tratamiento":"Inmovilización mediante escayola. Reposo durante 20 días"},{"fecha":"23/4/2015","informe":"Dolor fuerte de cabeza","diagnostico":"Principio de migrañas","pruebas":["Sin prueba"],"tratamiento":"Nolotil 1mg cada 8 horas"}]
 },
 {
-"idUser":"456",
+"idUser":"AB-651",
+"name":"Antonio Banderas",
+"gender":"male",
+"lastVisit":"23/4/2015",
+"phone":"555684",
+"photo":"banderas.jpg",
+"visits":[{"fecha":"23/4/2015","informe":"Dolencia en mano derecha","diagnostico":"Posible rotura de primera falange","pruebas":["RX-primera falange"],"tratamiento":"Inmovilicación completa de la falange durante 2 semanas"},
+{"fecha":"30/5/2014","informe":"Dolencia estomacal","diagnostico":"Inflamación de apéndice","pruebas":["Ecografia abdominal","Analitica completa"],"tratamiento":"Ingestión de buscapina cada 8 horas y seguimiento"},{"fecha":"3/6/2015","informe":"Extirpación de apéndice","diagnostico":"Apendicitis","pruebas":["Sin prueba"],"tratamiento":"Operación de extirpado de apéndice, Reposo durante 12 días"}]
+},
+{
+"idUser":"AM-142",
 "name":"Antonio Machin",
 "gender":"male",
 "lastVisit":"12/3/2015",
-"phone":"555456",
+"phone":"555111",
 "photo":"machin.jpg",
-"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Machin"],"tratamiento":"rerere tratamiento"},
-{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["documento"],"tratamiento":"rerere tratamiento"}]
+"visits":[{"fecha":"3/2/2012","informe":"Principios de resfriado","diagnostico":"Comienzo proceso gripal","pruebas":["Sin prueba"],"tratamiento":"Frenadol cada 8 horas y reposo"}]
 },
 {
-"idUser":"456",
+"idUser":"BP-781",
 "name":"Brad Pitt",
 "gender":"male",
 "lastVisit":"12/3/2015",
-"phone":"555456",
+"phone":"555781",
 "photo":"pitt.jpg",
-"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Pitt"],"tratamiento":"rerere tratamiento"},
-{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Pitt"],"tratamiento":"rerere tratamiento"}]
+"visits":[{"fecha":"3/2/2012","informe":"Golpe fuerte frontal","diagnostico":"Posible rotura de fosa nasal","pruebas":["RX-fosaNasal"],"tratamiento":"Taponar con inmovilizadores nasales durante 6 días y revisión"}]
 },
 {
-"idUser":"456",
-"name":"Begoña",
-"gender":"male",
+"idUser":"BM-902",
+"name":"Beatriz Montañez",
+"gender":"female",
 "lastVisit":"12/3/2015",
-"phone":"555456",
-"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["radiografia Begoña","analitica Begoña"],"tratamiento":"rerere tratamiento"},
-{"fecha":"10/10/2011","informe":"lololo informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Begoña"],"tratamiento":"rerere tratamiento"}]
+"phone":"555454",
+"photo":"montanez.jpg",
+"visits":[{"fecha":"3/2/2012","informe":"Visita periódica","diagnostico":"Ecografía embarazo","pruebas":["EC-embarazo"],"tratamiento":"reposo y mantenimiento moderado"}]
 },
 {
-"idUser":"456",
-"name":"Fernando",
+"idUser":"FA-332",
+"name":"Fernando Alonso",
 "gender":"male",
 "lastVisit":"12/3/2015",
-"phone":"555456",
-"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Fernando"],"tratamiento":"rerere tratamiento"}]
-},
-{
-"idUser":"456",
-"name":"Juanito",
-"gender":"male",
-"lastVisit":"12/3/2015",
-"phone":"555456",
-"visits":[{"fecha":"3/2/2012","informe":"lalala informe","diagnostico":"popopo diagnostico","pruebas":["prueba1 Juanito"],"tratamiento":"rerere tratamiento"}]
+"phone":"555778",
+"photo":"alonso.jpg",
+"visits":[{"fecha":"3/2/2012","informe":"Dolencia cervical","diagnostico":"Luxacion primera cervical","pruebas":["RX-cervical"],"tratamiento":"Inmovilización durante 10 días"}]
 }
 
 ]

@@ -45,7 +45,6 @@
 
 -(void)loadPDF{
     
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:self.proofPDF ofType:@"pdf"];
     NSURL *targetURL = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
