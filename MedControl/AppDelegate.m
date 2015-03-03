@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "JSZPatientListModel.h"
 #import "JSZPatientListController.h"
-
+#import "JSZPatientController.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +26,7 @@
     //compruebo el tipo de pantalla del dispositivo
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         //tablet
-        
+        [self configureForPad];
     }else{
         [self configureForPhone];
     }
@@ -91,6 +91,40 @@
     
 }
 
+-(void)configureForPad{
+    
+    //creo el modelo
+    
+    JSZPatientListModel *model = [[JSZPatientListModel alloc]init];
+    
+    //Creo el controlador de la tabla
+    JSZPatientListController *patientListController = [[JSZPatientListController alloc]initWithModel:model style:UITableViewStylePlain];
+    
+    JSZPatientController *patientViewController = [[JSZPatientController alloc]initWithModel:[model.patients objectAtIndex:0]];
+    
+    //creo el combinador
+    
+    UINavigationController *navVc = [[UINavigationController alloc]init];
+    [navVc pushViewController:patientViewController animated:YES];
+    
+    UINavigationController *tableNav = [[UINavigationController alloc]init];
+    [tableNav pushViewController:patientListController animated:NO];
+    
+    UISplitViewController *splitVc = [[UISplitViewController alloc]init];
+    [splitVc setViewControllers:@[tableNav,navVc]];
+    
+    //Asigno delegado
+    splitVc.view.backgroundColor = [UIColor whiteColor];
+    splitVc.delegate = patientViewController;
+    
+    patientListController.delegate = patientViewController;
+    
+    //Asignamos la vista principal
+    
+    self.window.rootViewController = splitVc;
+    
+    
+}
 
 
 @end

@@ -25,10 +25,8 @@
 
 #pragma mark - Utils
 
-//Encuentra al paciente en la posicion index
 - (JSZPatient *)patientAtIndex:(NSUInteger)index;
 
-//Devuelve el número total de secciones en el modelo
 -(NSUInteger) totalSectionsInModel:(NSArray*)patients;
 
 @end

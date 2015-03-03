@@ -25,11 +25,10 @@
 @property (weak,nonatomic) id<JSZPatientListControllerDelegate> delegate;
 
 #pragma mark - Search Bar properties
-//@property (strong, nonatomic) UITableView *myTableView;
-@property (strong, nonatomic) NSMutableArray *dataSource1; //will be storing all the data
-@property (strong, nonatomic) NSMutableArray *tableData;//will be storing data that will be displayed in table
-@property (strong, nonatomic) NSMutableArray *searchedData;//will be storing data matching with the search string
-@property (strong, nonatomic) UISearchBar *sBar;//search bar
+@property (strong, nonatomic) NSMutableArray *dataSource1; 
+@property (strong, nonatomic) NSMutableArray *tableData;
+@property (strong, nonatomic) NSMutableArray *searchedData;
+@property (strong, nonatomic) UISearchBar *sBar;
 
 
 #pragma mark - Designed Initializers

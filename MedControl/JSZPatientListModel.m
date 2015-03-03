@@ -15,7 +15,6 @@
 -(id) init{
     
     if (self = [super init]) {
-        //Recoleccion del JSON y tratamiento del mismo
         
         NSURL *urlToFile = [[NSBundle mainBundle] URLForResource:@"Patients"
                                                    withExtension:@"txt"];

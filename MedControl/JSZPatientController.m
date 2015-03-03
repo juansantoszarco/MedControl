@@ -40,28 +40,19 @@
 #pragma mark - Initialiazer
 
 -(id) initWithModel: (JSZPatient*)patient{
-    //pilla por defecto el mismo nombre que es el que tenga la calse
     if(self = [super initWithNibName:nil
                               bundle:nil] ){
         _patient = patient;
         self.title = patient.name;
-        
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     [self registerRandomCell];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    /*##################################
-     
-     Cómo hago para decir que la tabla interna en la celda tiene su delegado y datasource??
-     
-     ####################################*/
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter]
@@ -107,7 +98,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -116,8 +106,26 @@
 #pragma mark - JSZWordsTableViewControllerDelegate
 -(void)patientListController:(JSZPatientListController *)sender didClickOnPatient:(JSZPatient *)patient{
     _patient= patient;
-    
     [self syncModel];
+   
+}
+
+
+
+
+- (void)hideMasterView
+{
+   
+        NSArray *controllers = self.splitViewController.viewControllers;
+        UIViewController *rootViewController = [controllers objectAtIndex:0];
+        
+        UIView *rootView = rootViewController.view;
+        CGRect rootFrame = rootView.frame;
+        rootFrame.origin.x -= rootFrame.size.width;
+        
+        [UIView beginAnimations:@"hideView" context:NULL];
+        rootView.frame = rootFrame;
+        [UIView commitAnimations];
     
 }
 
@@ -128,8 +136,10 @@
     _userGender.text = self.patient.gender;
     _userId.text = self.patient.idUser;
     _userPhone.text = [self.patient.phone description];
-    
-    
+    _userPhoto.image = self.patient.photo;
+    if(_userPhoto.image == nil){
+        _userPhoto.image = [UIImage imageNamed:@"sinfoto.jpg"];
+    }
 }
 
 #pragma mark - UISplitViewControllerDelegate
@@ -159,13 +169,12 @@
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
     return [[self.patient extractVisitsFromJSONArray:self.patient.visits]count];
-    
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section{
-    
+
     return 1;
 }
 
@@ -175,13 +184,8 @@
     
     JSZVisitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[JSZPatientController randomCellId] forIndexPath:indexPath];
     
-    //configure the cell
     cell.inform.text = [[self.patient.visits objectAtIndex:indexPath.section]objectForKey:@"informe"];
     cell.diagnostic.text = [[self.patient.visits objectAtIndex:indexPath.section]objectForKey:@"diagnostico"];
-    
-    
-    
-    
     
     NSArray* pruebas = [self.patient extractProofsFromVisit:[self.patient.visits objectAtIndex:indexPath.section]];
     
@@ -210,16 +214,14 @@
 
 
 -(void) initializeCollection{
-    // Layout
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;
-    layout.itemSize = CGSizeMake(self.view.frame.size.width-40,220);
+    layout.itemSize = CGSizeMake(self.view.frame.size.width-40,215);
     layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0);
     layout.headerReferenceSize = CGSizeMake(200, 0);
-    
-    self.collectionView.collectionViewLayout= layout;
+    self.collectionView.collectionViewLayout = layout;
     
 }
 
@@ -248,8 +250,6 @@
                                       reuseIdentifier:cellId];
     }
     
-    // Configure the cell...
-    
     cell.textLabel.text = text;
     
     return cell;
@@ -264,7 +264,6 @@
     JSZProofsController *prooftVC = [[JSZProofsController alloc]initWithProof:proof];
     
     [self.navigationController pushViewController:prooftVC animated:YES];
-    
     
 }
 

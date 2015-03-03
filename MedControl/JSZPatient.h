@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import UIKit;
 
 @interface JSZPatient : NSObject
 
@@ -17,6 +18,7 @@
 @property (copy,nonatomic) NSString *idUser;// Maybe type NSNumber to compare easiest
 @property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) NSNumber* phone;
+@property (strong, nonatomic) UIImage *photo;
 @property (strong,nonatomic) NSArray *visits;
 
 
@@ -28,6 +30,7 @@
                idUser:(NSString*) aIdUser
                  date:(NSDate*) aDate
                 phone:(NSNumber*) aPhone
+                photo:(UIImage*) aPhoto
                visits:(NSArray*)aVisits;
 
 
@@ -38,18 +41,15 @@
             idUser:(NSString*) aIdUser
               date:(NSDate*) aDate
              phone:(NSNumber*) aPhone
+             photo:(UIImage*) aPhoto
             visits:(NSArray*)aVisits;
 
-// Inicializador a partir de diccionario JSON
 -(id) initWithDictionary:(NSDictionary *)aDict;
 
 #pragma mark - Utils
 
-
-//Metodo para extraer visitas
 -(NSArray*)extractVisitsFromJSONArray: (NSArray*)JSONArray;
 
-//Metodo para extraer pruebas
 -(NSArray*)extractProofsFromVisit: (NSDictionary*)dataFromVisit;
 
 @end

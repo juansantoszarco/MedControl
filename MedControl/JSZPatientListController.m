@@ -64,10 +64,8 @@
 #pragma mark UISearchBarDelegate
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    // only show the status bar's cancel button while in edit mode
     self.sBar.showsCancelButton = YES;
     self.sBar.autocorrectionType = UITextAutocorrectionTypeNo;
-    // flush the previous search content
     [self.tableData removeAllObjects];
     self.flagSearchStatus = 1;
 }
@@ -79,7 +77,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self.tableData removeAllObjects];// remove all data that belongs to previous search
+    [self.tableData removeAllObjects];
     if([searchText isEqualToString:@""]||searchText==nil){
         [self.tableView reloadData];
         return;
@@ -97,7 +95,6 @@
 }
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    // if a valid search was entered but the user wanted to cancel, bring back the main list content
     self.flagSearchStatus = 0;
     [self.tableData removeAllObjects];
     [self.tableData addObjectsFromArray:self.dataSource1];

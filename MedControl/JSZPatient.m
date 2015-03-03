@@ -19,6 +19,7 @@
                idUser:(NSString*) aIdUser
                  date:(NSDate*) aDate
                 phone:(NSNumber*) aPhone
+                photo:(UIImage*) aPhoto
                visits:(NSArray *)aVisits{
     
     return [[self alloc] initWithName:aName
@@ -26,6 +27,7 @@
                                idUser:aIdUser
                                  date:aDate
                                 phone:aPhone
+                                photo:aPhoto
                                visits:aVisits];
     
 }
@@ -37,7 +39,8 @@
             idUser:(NSString*) aIdUser
               date:(NSDate*) aDate
              phone:(NSNumber*) aPhone
-            visits:(NSArray *)aVisits{
+             photo:(UIImage*) aPhoto
+            visits:(NSArray*)aVisits{
     
     if (self = [super init]) {
         _name = aName;
@@ -45,6 +48,7 @@
         _idUser = aIdUser;
         _date = aDate;
         _phone = aPhone;
+        _photo= aPhoto;
         _visits = aVisits;
     }
     return self;
@@ -58,6 +62,7 @@
                        idUser:[aDict objectForKey:@"idUser"]
                          date:[self extractDateFromJSONArray:[aDict objectForKey:@"lastVisit"]]
                         phone:[aDict objectForKey:@"phone"]
+                        photo:[UIImage imageNamed:[aDict objectForKeyedSubscript:@"photo"]]
                        visits:[aDict objectForKey:@"visits"]];
     
 }
@@ -68,7 +73,6 @@
 
 -(NSDate*)extractDateFromJSONArray: (NSString*)stringDate{
     
-    // Convert string to date object
     NSString *aux =[NSString stringWithFormat:@"%@ %@", stringDate, @"GMT"];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy zzz"];
