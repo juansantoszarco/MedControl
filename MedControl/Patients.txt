@@ -16,7 +16,7 @@
 "phone":"555684",
 "photo":"banderas.jpg",
 "visits":[{"fecha":"23/4/2015","informe":"Dolencia en mano derecha","diagnostico":"Posible rotura de primera falange","pruebas":["RX-primera falange"],"tratamiento":"Inmovilicación completa de la falange durante 2 semanas"},
-{"fecha":"30/5/2014","informe":"Dolencia estomacal","diagnostico":"Inflamación de apéndice","pruebas":["Ecografia abdominal","Analitica completa"],"tratamiento":"Ingestión de buscapina cada 8 horas y seguimiento"},{"fecha":"3/6/2015","informe":"Extirpación de apéndice","diagnostico":"Apendicitis","pruebas":["Sin prueba"],"tratamiento":"Operación de extirpado de apéndice, Reposo durante 12 días"}]
+{"fecha":"30/5/2014","informe":"Dolencia estomacal","diagnostico":"Inflamación de apéndice","pruebas":["Ecografia abdominal","Analitica completa"],"tratamiento":"Ingestión de buscapina cada 8 horas y seguimiento"},{"fecha":"3/6/2015","informe":"Extirpación de apéndice","diagnostico":"Apendicitis","pruebas":["Sin prueba"],"tratamiento":"Operación de extirpado de apéndice. Reposo durante 12 días"}]
 },
 {
 "idUser":"AM-142",
@@ -43,7 +43,7 @@
 "lastVisit":"12/3/2015",
 "phone":"555454",
 "photo":"montanez.jpg",
-"visits":[{"fecha":"3/2/2012","informe":"Visita periódica","diagnostico":"Ecografía embarazo","pruebas":["EC-embarazo"],"tratamiento":"reposo y mantenimiento moderado"}]
+"visits":[{"fecha":"3/2/2012","informe":"Visita periódica","diagnostico":"Ecografía embarazo","pruebas":["EC-embarazo"],"tratamiento":"Reposo y mantenimiento moderado"}]
 },
 {
 "idUser":"FA-332",
@@ -52,7 +52,7 @@
 "lastVisit":"12/3/2015",
 "phone":"555778",
 "photo":"alonso.jpg",
-"visits":[{"fecha":"3/2/2012","informe":"Dolencia cervical","diagnostico":"Luxacion primera cervical","pruebas":["RX-cervical"],"tratamiento":"Inmovilización durante 10 días"}]
+"visits":[{"fecha":"3/2/2012","informe":"Dolencia cervical","diagnostico":"Luxación primera cervical","pruebas":["RX-cervical"],"tratamiento":"Inmovilización durante 10 días"}]
 }
 
 ]

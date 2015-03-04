@@ -79,8 +79,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* archivo = [self.model objectAtIndex:indexPath.row];
     if (![archivo isEqualToString:@"Sin prueba"]) {
-        
-        
+                
         if ([self.delegate respondsToSelector:@selector(proobCellController:didClickOnProof:)]) {
             [self.delegate proobCellController:self didClickOnProof:archivo];
         }else{

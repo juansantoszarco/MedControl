@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Juan Antonio de los Santos Zarco. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface JSZProofsController : UIViewController
 

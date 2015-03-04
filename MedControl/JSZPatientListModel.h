@@ -25,7 +25,7 @@
 
 #pragma mark - Utils
 
-- (JSZPatient *)patientAtIndex:(NSUInteger)index;
+-(JSZPatient *)patientAtIndex:(NSUInteger)index;
 
 -(NSUInteger) totalSectionsInModel:(NSArray*)patients;
 

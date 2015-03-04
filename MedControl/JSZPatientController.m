@@ -161,6 +161,7 @@
        forPopoverController:(UIPopoverController *)pc
 {
     self.navigationItem.rightBarButtonItem = barButtonItem;
+    self.navigationItem.rightBarButtonItem.title = @"Patient List";
 }
 
 - (void)splitViewController:(UISplitViewController *)svc

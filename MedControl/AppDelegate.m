@@ -23,9 +23,7 @@
     
     [self configureStyles];
     
-    //compruebo el tipo de pantalla del dispositivo
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        //tablet
         [self configureForPad];
     }else{
         [self configureForPhone];
@@ -63,29 +61,15 @@
 
 -(void)configureForPhone{
     
-    
-    //creo el modelo de datos leido del json
     JSZPatientListModel *model = [[JSZPatientListModel alloc]init];
-    
-    //creo el controlador de la tabla
     
     JSZPatientListController *patientListController = [[JSZPatientListController alloc]initWithModel:model style:UITableViewStylePlain];
     
-    //creo el combinador que será un navigation controller
-    
     UINavigationController *patientsNav = [[UINavigationController alloc] init];
-    
-    //pusheo el delegado
     
     [patientsNav pushViewController:patientListController animated:NO];
     
-    
-    //le asigno delegado a sí mismo
-    
     patientListController.delegate = patientListController;
-    
-    
-    //le coloco como vista principal
     
     self.window.rootViewController = patientsNav;
     
@@ -93,16 +77,11 @@
 
 -(void)configureForPad{
     
-    //creo el modelo
-    
     JSZPatientListModel *model = [[JSZPatientListModel alloc]init];
     
-    //Creo el controlador de la tabla
     JSZPatientListController *patientListController = [[JSZPatientListController alloc]initWithModel:model style:UITableViewStylePlain];
     
     JSZPatientController *patientViewController = [[JSZPatientController alloc]initWithModel:[model.patients objectAtIndex:0]];
-    
-    //creo el combinador
     
     UINavigationController *navVc = [[UINavigationController alloc]init];
     [navVc pushViewController:patientViewController animated:YES];
@@ -113,17 +92,13 @@
     UISplitViewController *splitVc = [[UISplitViewController alloc]init];
     [splitVc setViewControllers:@[tableNav,navVc]];
     
-    //Asigno delegado
     splitVc.view.backgroundColor = [UIColor whiteColor];
     splitVc.delegate = patientViewController;
     
     patientListController.delegate = patientViewController;
     
-    //Asignamos la vista principal
-    
     self.window.rootViewController = splitVc;
-    
-    
+        
 }
 
 

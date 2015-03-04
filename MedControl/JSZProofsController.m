@@ -8,6 +8,9 @@
 
 #import "JSZProofsController.h"
 
+#define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:0.95]
+
+
 @interface JSZProofsController ()
 
 @end
@@ -27,21 +30,21 @@
 -(id)initWithProof:(NSString*)proof{
     if(self=[super init]){
         _proofPDF = proof;
-        self.title = proof;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectZero];
+        label.font = [UIFont fontWithName:@"Avenir" size:16.0f];
+        label.textColor = Rgb2UIColor(95, 22, 28);
+        self.navigationItem.titleView = label;
+        label.text = proof;
+        [label sizeToFit];
         
     }
     
     return self;
     
-    
 }
 
 
 #pragma mark - Utils
-
--(void)loadPrueba{
-    
-}
 
 -(void)loadPDF{
     
@@ -49,8 +52,7 @@
     NSURL *targetURL = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [self.webViewProof loadRequest:request];
-    
-   
+       
 }
 
 
